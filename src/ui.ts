@@ -226,7 +226,10 @@ export default class Ui {
        */
       eventName = 'loadeddata';
     }
-
+    // Remove prior existing image
+    if (this.nodes.imageEl) {
+      this.nodes.imageContainer.removeChild(this.nodes.imageEl);
+    }
     /**
      * Compose tag with defined attributes
      */
