@@ -434,8 +434,10 @@ export default class ImageTool implements BlockTool {
    * @param response - uploading server response
    */
   private onUpload(response: UploadResponseFormat): void {
-    if (response.success && Boolean(response.file)) {
-      this.image = response.file;
+    if (response.success) {
+      if (Boolean(response.file)) {
+        this.image = response.file;
+      }
     } else {
       this.uploadingFailed('incorrect response: ' + JSON.stringify(response));
     }
