@@ -106,6 +106,7 @@ export default class ImageTool implements BlockTool {
       captionPlaceholder: this.api.i18n.t(config.captionPlaceholder ?? 'Caption'),
       buttonContent: config.buttonContent,
       uploader: config.uploader,
+      selectFiles: config.selectFiles,
       actions: config.actions,
       features: config.features || {},
     };
