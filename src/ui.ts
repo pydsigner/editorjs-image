@@ -247,6 +247,7 @@ export default class Ui {
     });
 
     this.nodes.imageContainer.appendChild(this.nodes.imageEl);
+    this.nodes.imageEl.addEventListener('click', this.onSelectFile);
   }
 
   /**
