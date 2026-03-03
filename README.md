@@ -27,7 +27,7 @@ This Tool is also capable of uploading & displaying video files using the `<vide
 Get the package
 
 ```shell
-yarn add @d48io/editorjs-image
+npm install @d48io/editorjs-image
 ```
 
 Include module at your application
