@@ -15,8 +15,8 @@
 const http = require('http');
 const formidable = require('formidable');
 const { parse } = require('querystring');
-const fs = require('fs');
-const request = require('request');
+const fs = require('node:fs');
+const fsp = require('node:fs/promises');
 const crypto = require('crypto');
 
 const SERVER_PORT = 8008;
@@ -204,13 +204,16 @@ class ServerExample {
    * @return {Promise<string>} - filename
    */
   downloadImage(uri, filename) {
-    return new Promise((resolve, reject) => {
-      request.head(uri, function (err, res, body) {
-        request(uri).pipe(fs.createWriteStream(filename).on('erorr', reject))
-          .on('close', () => {
-            resolve(filename);
-          });
-      });
+    return new Promise(async (resolve, reject) => {
+      try {
+        const response = await fetch(uri);
+        const blob = await response.blob();
+        await fsp.writeFile(file, blob);
+        resolve(filename);
+      }
+      catch (e) {
+        reject(e);
+      }
     });
   }
 
