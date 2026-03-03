@@ -1,6 +1,6 @@
 {
-  "name": "@editorjs/image",
-  "version": "2.10.3",
+  "name": "@d48io/editorjs-image",
+  "version": "2.10.4",
   "keywords": [
     "codex editor",
     "image",
@@ -9,7 +9,10 @@
   ],
   "description": "Image Tool for Editor.js",
   "license": "MIT",
-  "repository": "https://github.com/editor-js/image",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pydsigner/editorjs-image.git"
+  },
   "files": [
     "dist"
   ],
@@ -30,10 +33,7 @@
     "lint:errors": "eslint --quiet",
     "lint:fix": "eslint --fix"
   },
-  "author": {
-    "name": "CodeX",
-    "email": "team@ifmo.su"
-  },
+  "author": "Daniel Foerster <df@d48.io> (https://d48.io)",
   "devDependencies": {
     "@codexteam/ajax": "^4.2.0",
     "@editorjs/editorjs": "2.30.0-rc.12",
